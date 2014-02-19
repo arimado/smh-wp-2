@@ -10,11 +10,11 @@
 	<body <?php body_class(); ?>>
 		<div id="wrapper" class="hfeed">
 		<header id="header" role="banner">
-			<!-- <nav id="menu" role="navigation">
-			<div id="search">
-			<?php //get_search_form(); ?>
-			</div> 
-			<?php //wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-			</nav> -->
+			<nav id="menu" role="navigation">
+				<div id="search">
+				<?php get_search_form(); ?>
+				</div> 
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+			</nav> 
 		</header>
 		<div id="container">
