@@ -4,8 +4,9 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width" />
 		<title><?php wp_title( ' | ', true, 'right' ); ?></title>
-		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
+		
 		<?php wp_head(); ?>
+		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="wrapper" class="hfeed">
@@ -13,7 +14,9 @@
 			<nav id="menu" role="navigation">
 				<div id="search">
 				<?php get_search_form(); ?>
+
 				</div> 
+				<div class="navicon"></div>
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 			</nav> 
 		</header>

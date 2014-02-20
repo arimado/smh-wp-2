@@ -1,6 +1,15 @@
 <?php 
 
 // ***************************************************
+//          DASHICON ICONS
+// ***************************************************
+
+add_action( 'wp_enqueue_scripts', 'papersive_load_dashicons' );
+function papersive_load_dashicons() {
+    wp_enqueue_style( 'dashicons' );
+}
+
+// ***************************************************
 // 			MULTIPOST THUMBNAILS 
 // ***************************************************
  if (class_exists('MultiPostThumbnails')) {
