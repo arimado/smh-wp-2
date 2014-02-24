@@ -20,4 +20,4 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 			</nav> 
 		</header>
-		<div id="container">
+		<div id="container"> 

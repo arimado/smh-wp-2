@@ -33,11 +33,11 @@
 							<div class="logo-tag"><?php bloginfo( 'description' ); ?></div>  
 					</div>
 						<div class="dark-overlay"></div>
-						<?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'cover-image'); endif; ?>
+						<?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'cover-image'); endif; ?>asd
 					</div> <!-- end ft-img --> 
 
 					<div class="ft-title-txt-wrap">
-						<div class="ft-date"><?php the_time( 'l' ); ?> the <?php the_time( 'd' ); ?><?php the_time( 'S' ); ?> of <?php the_time( 'F Y' ); ?></div>
+						<div class="ft-date"><?php the_time( 'F j' ); ?> , <?php the_time( 'Y' ); ?></div>
 						<div class="ft-title"><a href="<?php echo get_permalink(); ?>" title="Go to <?php echo the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></div> 
 						<div class="ft-tag-wrapper">
 											<div class="ft-tag table-cell empty"></div>
@@ -59,6 +59,7 @@
 		endforeach; ?>  
 							
 </div> <!-- end feature --> 
+
 
 
 

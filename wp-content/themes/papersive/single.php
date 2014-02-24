@@ -7,14 +7,14 @@
 	<div class="logo-line"></div>
 	<div class="logo-tag"><?php bloginfo( 'description' ); ?></div>  
 </div>  <!-- END OF LOGO -->
-					
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 <div class="ft-img">
 	<div class="dark-overlay"></div>
-	<?php the_post_thumbnail('feature-slider'); ?> 
+	<?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'cover-image'); endif; ?>
 </div> <!-- end ft-img --> 
 
 <div class="ft-title-txt-wrap"> 
-	<div class="ft-date"><?php the_time( 'l' ); ?> the <?php the_time( 'd' ); ?><?php the_time( 'S' ); ?> of <?php the_time( 'F Y' ); ?></div>
+	<div class="ft-date"><?php the_time( 'F j' ); ?> , <?php the_time( 'Y' ); ?></div>
 	<div class="ft-title"><a href="<?php echo get_permalink(); ?>" title="Go to <?php echo the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></div> 
 	<div class="ft-tag-wrapper">
 		<div class="ft-tag table-cell empty"></div>
@@ -27,45 +27,69 @@
 		</div>
 		<div class="ft-tag table-cell empty"></div> 
 	</div> 
-	<div class="ft-tag-author">By <?php the_author_meta( first_name ); ?> <?php the_author_meta( last_name ); ?> </div> 
+	<div class="ft-tag-author">By <?php the_author(); ?> </div> 
 </div><!-- end ft-title-txt-wrap -->
 
 <!-- END OF ARTICLE HEADER -->  
-
 <section id="content" role="main">
 
 <div class="content">
 	<div class="main-content">
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	
 		<div class="article-content">
+			<?php $the_author = get_the_author() ?>
 			<?php the_content(); ?> 
 		</div>
 	</div>
-asdasd
-	<?php
-//for use in the loop, list 5 post titles related to first tag on current post
-$tags = wp_get_post_tags($post->ID);
-if ($tags) {
-echo 'Related Posts';
-$first_tag = $tags[0]->term_id;
-$args=array(
-'tag__in' => array($first_tag),
-'post__not_in' => array($post->ID),
-'posts_per_page'=>5,
-'caller_get_posts'=>1
-);
-$my_query = new WP_Query($args);
-if( $my_query->have_posts() ) {
-while ($my_query->have_posts()) : $my_query->the_post(); ?>
-<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+	<div class="related-content">  	 
 
-<?php
-endwhile;
-}
-wp_reset_query();
-}
-?>
+			<div class="side-title">
+			    <div class="side-title-txt">RELATED</div>
+			    <div class="side-title-line"></div>
+			</div>
 
+		<?php
+			 $orig_post = $post;  
+		    global $post;  
+		    $tags = wp_get_post_tags($post->ID);  
+		      
+		    if ($tags) {  
+		    $tag_ids = array();  
+		    foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;  
+		    $args=array(  
+		    'tag__in' => $tag_ids,  
+		    'post__not_in' => array($post->ID),  
+		    'posts_per_page'=>4, // Number of related posts to display.  
+		    'caller_get_posts'=>1  
+		    );  
+		      
+		    $my_query = new wp_query( $args );  
+		  
+		    while( $my_query->have_posts() ) {  
+		    $my_query->the_post(); ?>
+
+
+			<div class="related-post-wrapper">
+				<div class="related-post">
+					<div class="related-img-cat">
+						<div class="related-cat-wrap">
+							<div class="related-cat"><?php the_category( ', ' ); ?></div> 
+						</div>
+						<div class="related-img"><?php the_post_thumbnail();?></div> 
+					</div>
+					<div class="related-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></div> 
+				</div>
+			</div> 
+
+
+
+			<?php
+			 	}
+			}
+			$post = $orig_post;
+			wp_reset_query();
+			?>
+	</div> 
 </div>
 <div class="sidebar">
 		<?php get_sidebar(); ?>
@@ -78,7 +102,7 @@ wp_reset_query();
 
 
 
-<?php get_template_part( 'nav', 'below-single' ); ?>
+<?php //get_template_part( 'nav', 'below-single' ); ?>
 <?php get_template_part ( 'footer' ); ?>
 </footer>
 
