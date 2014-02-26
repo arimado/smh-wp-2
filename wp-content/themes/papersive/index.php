@@ -1,5 +1,9 @@
 <?php get_header(); ?>
+
+
 <?php get_template_part( 'featured' ); ?> 
+
+
 <section id="content" role="main">
 <div class="content">
 <?php 

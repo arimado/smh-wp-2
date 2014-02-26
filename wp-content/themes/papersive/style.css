@@ -10,7 +10,7 @@ Template: blankslate
 */ 
 
 @import url('../blankslate/style.css');
-@import url('http://localhost:8888/smh-wp-2/wp-includes/css/dashicons.min.css');
+
 
 /*********  
 ----------------------------------------------------------------
@@ -88,19 +88,23 @@ LAYOUT
 	LOGO BEGIN
 */
 
+.logo-wrap {
+	padding-top: 40px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
+
 .logo {
 	font-family: 'Lato';
 	text-transform: uppercase;
 	text-align: center;
-
 	color: white;
-	position: absolute;
-	z-index: 99999;
-	padding-top: 40px;
-	height: 650px;
+	position: relative;
+	z-index: 99999999;
+	width: 700px;
 	margin: auto;
- 	top: 0; left: 0; bottom: 0; right: 0;
-
+	margin-top: 60px;
 }
 
 	.logo a {
@@ -151,7 +155,7 @@ MENU
 }
 
 #menu a {
-	color: white;
+	
 }
 
 #search {
@@ -245,7 +249,7 @@ MENU
 		}
 
 	.menu {
-		display: none;
+		
 	}
 
 /*********  
@@ -293,9 +297,6 @@ HEADER
 		border-top: 3px solid black;
 		border-bottom: 3px solid black;
 		text-align: center;
-		-webkit-box-shadow: 0px -1px 2px 0px rgba(0, 0, 0, .7);
-		-moz-box-shadow:    0px -1px 2px 0px rgba(0, 0, 0, .7);
-		box-shadow:         0px -1px 2px 0px rgba(0, 0, 0, .7);
 		position: relative;
 		z-index: 99999;
 	}
@@ -305,15 +306,14 @@ HEADER
 			font-size: .8em;
 			text-transform: uppercase;
 			letter-spacing: .3em;
-			font-weight: 700;
 		}
 
 		.ft-title {
 			font-size: 2.5em;
 			text-transform: uppercase;
-			font-weight: 900;
+			font-weight: 700;
 			padding: 20px 0px 20px 0px;
-		}
+		} 
 
 		.ft-tag {
 			position: relative;
@@ -502,6 +502,7 @@ SIDEBAR
 
 .side-block {
 	margin-bottom: 20px;
+	overflow: auto;
 }
 
 /*
@@ -666,6 +667,83 @@ SIDEBAR
 
 /*
 	LATEST COOL THING ENDS
+*/
+
+
+/*
+	SOCIAL BLOCK
+*/
+
+
+input:focus {
+		outline: 0 none;
+	}
+
+	#mc-embedded-subscribe-form {
+
+		background: #000;
+		padding: 5px;
+		overflow: auto;
+	}
+
+	.email-form-wrap {
+		border: 1px solid right;
+	}
+
+	#mce-EMAIL {
+	    font-family: 'Open Sans';
+	    -moz-border-bottom-colors: #fff;
+	    -moz-border-left-colors: none;
+	    -moz-border-right-colors: none;
+	    -moz-border-top-colors: none;
+	    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+	    border-color: -moz-use-text-color -moz-use-text-color #000000;
+	    border-image: none;
+	    border-radius: 0;
+	    border-style: solid solid solid;
+	    border-width: 4px 4px 4px 4px;
+	    color: #fff;
+	    font-size: 1em;
+	    font-style: normal;
+	    font-weight: 400;
+	    padding: 10px 8px 8px 8px;
+	    display: block;
+	    width: 73%;
+	    float: left;
+	    margin: 0;
+	}
+	#mc-embedded-subscribe {
+		font-family: 'Open Sans';
+		background: none;
+		border-style: solid solid solid;
+		border-color: #fff;
+		border-color: -moz-use-text-color -moz-use-text-color #000000;
+		-moz-border-bottom-colors: #fff;
+	    border-width: 4px;
+	    color: #FFF;
+	    cursor: pointer;
+	    display: block;
+	    font-size: 1em;
+	    font-weight: 900;
+	    letter-spacing: 1px;	
+	    padding: 8px 8px 10px 8px;
+	    margin: 0;
+	    float: right;
+	    width: 20%;
+
+	}
+
+	#mc-embedded-subscribe:hover {
+		background: #fff;
+		color: #000;
+	}
+
+
+
+/*
+
+	SOCIAL BLOCK ENDS 
+
 */
 
 /*
@@ -1026,6 +1104,137 @@ CATEGORY PAGE
 /*
 	BIG FEATURE END
 */
+
+
+/* General styles for all menus */
+ 
+.cbp-spmenu {
+    background: #262e3a;
+    position: fixed; 
+    list-style-type: none;
+   -webkit-box-shadow: inset -4px 0px 7px 0px rgba(0, 0, 0, 0.75);
+-moz-box-shadow:    inset -4px 0px 7px 0px rgba(0, 0, 0, 0.75);
+box-shadow:         inset -4px 0px 7px 0px rgba(0, 0, 0, 0.75);
+}
+ 
+.cbp-spmenu h3 {
+    color: #000;
+    font-size: 1.9em;
+    padding: 20px;
+    margin: 0;
+    font-weight: 800;
+
+}
+ 
+.cbp-spmenu a {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: white;
+}
+ 
+.cbp-spmenu a:hover {
+    background: #000;
+    color: white;
+}
+ 
+.cbp-spmenu a:active {
+    background: #afdefa;
+    color: black;
+}
+ 
+/* Orientation-dependent styles for the content of the menu */
+ 
+.cbp-spmenu-vertical {
+    width: 240px;
+    height: 100%;
+    top: 0;
+    z-index: 1000;
+}
+ 
+.cbp-spmenu-vertical a {
+    padding: 1em;
+}
+ 
+/* Vertical menu that slides from the left or right */
+ 
+.cbp-spmenu-left {
+    left: -245px;
+}
+ 
+.cbp-spmenu-right {
+    right: -245px;
+}
+ 
+.cbp-spmenu-left.cbp-spmenu-open {
+    left: 0px;
+}
+ 
+.cbp-spmenu-right.cbp-spmenu-open {
+    right: 0px;
+}
+ 
+/* Push classes applied to the body */
+ 
+.cbp-spmenu-push {
+    overflow-x: hidden;
+    position: relative;
+    left: 0;
+}
+ 
+.cbp-spmenu-push-toright {
+    left: 240px;
+}
+ 
+/* Transitions */
+ 
+.cbp-spmenu,
+.cbp-spmenu-push {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+ 
+/* Example media queries */
+ 
+@media screen and (max-width: 55.1875em){
+ 
+    .cbp-spmenu-horizontal {
+        font-size: 75%;
+        height: 110px;
+    }
+ 
+    .cbp-spmenu-top {
+        top: -110px;
+    }
+ 
+    .cbp-spmenu-bottom {
+        bottom: -110px;
+    }
+ 
+}
+ 
+@media screen and (max-height: 26.375em){
+ 
+    .cbp-spmenu-vertical {
+        font-size: 90%;
+        width: 190px;
+    }
+ 
+    .cbp-spmenu-left,
+    .cbp-spmenu-push-toleft {
+        left: -190px;
+    }
+ 
+    .cbp-spmenu-right {
+        right: -190px;
+    }
+ 
+    .cbp-spmenu-push-toright {
+        left: 190px;
+    }
+}
 
 
 

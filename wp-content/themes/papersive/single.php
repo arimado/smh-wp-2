@@ -1,12 +1,15 @@
 <?php get_header(); ?>
 
 <!-- ARTICLE HEADER -->
+<div class="logo-wrap">
+	<div class="logo">
+		<div class="logo-main"><?php if ( ! is_singular() ) { echo '<h1>'; } ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'blankslate' ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><?php if ( ! is_singular() ) { echo '</h1>'; } ?></div>
+		<div class="logo-line"></div>
+		<div class="logo-tag"><?php bloginfo( 'description' ); ?></div>  
+	</div> 
+</div> 
 
-<div class="logo">
-	<div class="logo-main"><?php if ( ! is_singular() ) { echo '<h1>'; } ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'blankslate' ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><?php if ( ! is_singular() ) { echo '</h1>'; } ?></div>
-	<div class="logo-line"></div>
-	<div class="logo-tag"><?php bloginfo( 'description' ); ?></div>  
-</div>  <!-- END OF LOGO -->
+<!-- END OF LOGO -->
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 <div class="ft-img">
 	<div class="dark-overlay"></div>
