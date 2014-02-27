@@ -965,6 +965,8 @@ RELATED CONTENT
 					border: 2px solid white;
 					padding: 5px;
 					letter-spacing: .2em;
+					position: relative;
+					z-index: 250;
 				}
 
 				.related-cat a:hover {
@@ -982,15 +984,35 @@ RELATED CONTENT
 				height: auto;
 			}
 
-		.related-title {
+		.related-title a{
 			padding: 20px 20px 20px 20px;
 			text-transform: uppercase;
 			line-height: 1.5em;
 			font-weight: 700;
+			display: block;
+
+		}
+
+		.related-link-wrap {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.related-link-wrap a {
+			display: block;
+			height: 100%;
+			z-index: 200;
+			position: relative;
 		}
 
 		.related-post-link {
-
+			position: absolute;
+			top: 0;
+			width: 100%;
+			left: 0;
+			height: 100%;
+			border: 1px solid red;
 		}
 
 		.related-post:hover {
@@ -1000,6 +1022,10 @@ RELATED CONTENT
 		.related-post:hover .related-title a{
 			background: black;
 			color: white;
+		}
+
+		.related-b-post {
+
 		}
 
 		.related-b-post:hover {
@@ -1042,7 +1068,7 @@ CATEGORY PAGE
 }
 	
 	.category-page-txt {
-		padding: 90px 90px 90px 90px;
+		padding: 150px 90px 90px 90px;
 		background-color: rgba(0, 0, 0, 0.3);
 	}
 

@@ -7,6 +7,15 @@
 </header>
 
 <div class="category-header-wrapper" style="background-image: url('<?php if (function_exists('z_taxonomy_image_url')) echo z_taxonomy_image_url(); ?>'); ">
+	
+	<div class="logo-wrap">
+		<div class="logo">
+			<div class="logo-main"><?php if ( ! is_singular() ) { echo '<h1>'; } ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'blankslate' ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><?php if ( ! is_singular() ) { echo '</h1>'; } ?></div>
+			<div class="logo-line"></div>
+			<div class="logo-tag"><?php bloginfo( 'description' ); ?></div>  
+		</div>
+	</div>
+
 	<div class="category-header header">
 		<div class="category-page-txt">
 			<div class="search-page-title entry-title"><?php get_template_part('searchform-page'); ?></div>
@@ -31,6 +40,15 @@
 
 		<header class="header">
 		</header>
+
+		<div class="logo-wrap">
+		<div class="logo">
+			<div class="logo-main"><?php if ( ! is_singular() ) { echo '<h1>'; } ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'blankslate' ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><?php if ( ! is_singular() ) { echo '</h1>'; } ?></div>
+			<div class="logo-line"></div>
+			<div class="logo-tag"><?php bloginfo( 'description' ); ?></div>  
+		</div>
+		</div>
+
 		<div class="category-header-wrapper" style="background-image: url('<?php if (function_exists('z_taxonomy_image_url')) echo z_taxonomy_image_url(); ?>'); background-size: cover;">
 			<div class="category-header header">
 				<div class="category-page-txt">

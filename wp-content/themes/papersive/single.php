@@ -29,7 +29,7 @@
 
 						<div class="ft-title-txt-wrap">
 						<div class="ft-date"><?php the_time( 'F j' ); ?> , <?php the_time( 'Y' ); ?></div>
-						<div class="ft-title"><a href="<?php echo get_permalink(); ?>" title="Go to <?php echo the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></div> 
+						<div class="ft-title"><?php the_title(); ?></div> 
 						<div class="ft-tag-wrapper">
 											<div class="ft-tag table-cell empty"></div>
 											<div class="ft-tag table-cell">
