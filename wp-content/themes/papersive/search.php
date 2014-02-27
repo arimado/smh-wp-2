@@ -6,7 +6,7 @@
 
 </header>
 
-<div class="category-header-wrapper" style="background-image: url('<?php if (function_exists('z_taxonomy_image_url')) echo z_taxonomy_image_url(); ?>'); background-size: cover;">
+<div class="category-header-wrapper" style="background-image: url('<?php if (function_exists('z_taxonomy_image_url')) echo z_taxonomy_image_url(); ?>'); ">
 	<div class="category-header header">
 		<div class="category-page-txt">
 			<div class="search-page-title entry-title"><?php get_template_part('searchform-page'); ?></div>
@@ -23,7 +23,9 @@
 		<?php get_template_part('related-entry'); ?>
 
 		<?php endwhile; ?>
-		<?php get_template_part( 'nav', 'below' ); ?>
+		<?php get_template_part( 'nav', 'below' ); ?> 
+
+
 		
 <?php else : ?>
 

@@ -11,11 +11,15 @@
 			<div class="latest-thing-main-tag-wrapper">
 				<div class="latest-thing table-cell empty"></div>
 				<div class="latest-thing table-cell">
-					<div class="latest-thing-main-line"></div>
+					<div style="position:relative;">
+						<div class="latest-thing-main-line"></div>
+					</div>
 				</div>
 				<div class="latest-thing-main-tag table-cell"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php echo get_post_meta($post->ID, "thing", true);; ?></a></div>
 				<div class="latest-thing table-cell">
-					<div class="latest-thing-main-line"></div>
+					<div style="position:relative;">
+						<div class="latest-thing-main-line"></div>
+					</div>
 				</div>
 				<div class="latest-thing table-cell empty"></div>
 			</div> 

@@ -1,4 +1,5 @@
 <div class="related-post-wrapper">
+	<a class="related-post-link" href="<?php the_permalink() ?>"></a>
 	<div class="related-b-post">
 		<div class="related-img-cat">
 			<div class="related-cat-wrap">
@@ -8,4 +9,5 @@
 		</div>
 		<div class="related-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></div> 
 	</div>
+	
 </div> 

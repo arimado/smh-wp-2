@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+
 <!-- ARTICLE HEADER -->
 <div class="logo-wrap">
 	<div class="logo">
@@ -10,29 +11,44 @@
 </div> 
 
 <!-- END OF LOGO -->
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-<div class="ft-img">
-	<div class="dark-overlay"></div>
-	<?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'cover-image'); endif; ?>
-</div> <!-- end ft-img --> 
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
-<div class="ft-title-txt-wrap"> 
-	<div class="ft-date"><?php the_time( 'F j' ); ?> , <?php the_time( 'Y' ); ?></div>
-	<div class="ft-title"><a href="<?php echo get_permalink(); ?>" title="Go to <?php echo the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></div> 
-	<div class="ft-tag-wrapper">
-		<div class="ft-tag table-cell empty"></div>
-		<div class="ft-tag table-cell">
-			<div class="ft-tag-main-line"></div>
-		</div>
-		<div class="ft-tag-txt table-cell"><?php _e( '', 'blankslate' ); ?><?php the_category( ', ' ); ?></div> 
-		<div class="ft-tag table-cell">
-			<div class="ft-tag-main-line"></div> 
-		</div>
-		<div class="ft-tag table-cell empty"></div> 
-	</div> 
-	<div class="ft-tag-author">By <?php the_author(); ?> </div> 
-</div><!-- end ft-title-txt-wrap -->
+				$coverImage = MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'cover-image');
 
+				?>	
+<div class="ft-img" style="background: url('<?php echo $coverImage; ?>');background-position:top;background-size:cover;">
+
+
+						<div class="logo-wrap">
+							<div class="logo">
+								<div class="logo-main"><?php if ( ! is_singular() ) { echo '<h1>'; } ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'blankslate' ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><?php if ( ! is_singular() ) { echo '</h1>'; } ?></div>
+								<div class="logo-line"></div>
+								<div class="logo-tag"><?php bloginfo( 'description' ); ?></div>  
+							</div>
+						</div>
+
+						<div class="ft-title-txt-wrap">
+						<div class="ft-date"><?php the_time( 'F j' ); ?> , <?php the_time( 'Y' ); ?></div>
+						<div class="ft-title"><a href="<?php echo get_permalink(); ?>" title="Go to <?php echo the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></div> 
+						<div class="ft-tag-wrapper">
+											<div class="ft-tag table-cell empty"></div>
+											<div class="ft-tag table-cell">
+												<div style="position:relative">
+													<div class="ft-tag-main-line"></div>
+												</div>
+											</div>
+											<div class="ft-tag-txt table-cell"><?php _e( '', 'blankslate' ); ?><?php the_category( ', ' ); ?></div> 
+											<div class="ft-tag table-cell">
+												<div style="position:relative">
+													<div class="ft-tag-main-line"></div>
+												</div>
+											</div>
+											<div class="ft-tag table-cell empty"></div>
+										</div> 
+						<div class="ft-tag-author">By <?php the_author_meta( first_name ); ?> <?php the_author_meta( last_name ); ?> </div> 
+					</div><!-- end ft-title-txt-wrap -->
+					<div class="dark-overlay"></div>
+</div>
 <!-- END OF ARTICLE HEADER -->  
 <section id="content" role="main">
 

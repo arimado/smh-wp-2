@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-<?php get_template_part( 'featured' ); ?> 
+<?php get_template_part( 'featured_b' ); ?> 
 
 
 <section id="content" role="main">

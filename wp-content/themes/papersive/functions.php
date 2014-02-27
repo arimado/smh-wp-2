@@ -73,7 +73,7 @@ $title = apply_filters( 'widget_title', $instance['title'] );
 // before and after widget arguments are defined by themes
 echo $args['before_widget'];
 if ( ! empty( $title ) )
-echo '<div class="side-title"><div class="side-title-txt recommended">' . $title . '</div><div class="side-title-line"></div></div>';
+echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title . '</div><div class="side-title-line"></div></div></div>';
 
 // This is where you run the code and display the output
 echo get_template_part( 'cool-thing' ); 
@@ -139,7 +139,7 @@ $title = apply_filters( 'widget_title', $instance['title'] );
 // before and after widget arguments are defined by themes
 echo $args['before_widget'];
 if ( ! empty( $title ) )
-echo '<div class="side-title"><div class="side-title-txt recommended">' . $title . '</div><div class="side-title-line"></div></div>';
+echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title . '</div><div class="side-title-line"></div></div></div>';
 
 // This is where you run the code and display the output
 echo get_template_part( 'recommended' ); 
@@ -206,7 +206,7 @@ $title = apply_filters( 'widget_title', $instance['title'] );
 // before and after widget arguments are defined by themes
 echo $args['before_widget'];
 if ( ! empty( $title ) )
-echo '<div class="side-title"><div class="side-title-txt social">' . $title . '</div><div class="side-title-line"></div></div>';
+echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title . '</div><div class="side-title-line"></div></div></div>';
 
 // This is where you run the code and display the output
 echo get_template_part( 'social' ); 
