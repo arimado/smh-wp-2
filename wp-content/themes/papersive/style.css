@@ -192,10 +192,9 @@ MENU
 	    font-size: .9em;
 	    font-size-adjust: 0.53;
 	    font-style: normal;
-	    font-weight: 800;
+	    font-weight: 700;
 	    letter-spacing: 2px;
 	    padding: 0.6em 0.8em 0.4em 0;
-	    text-transform: uppercase;
 	    margin: auto;
 	    width: 250px; 
 	}
@@ -317,7 +316,7 @@ HEADER
 			text-transform: uppercase;
 			font-weight: 700;
 			padding: 20px 0px 20px 0px;
-			max-width: 700px;
+			max-width: 600px;
 			margin: auto;
 		} 
 
@@ -826,6 +825,51 @@ input:focus {
 	SIDEBAR RECOMMENDEDB ENDS
 */
 
+
+
+/*
+	SIDEBAR RECOMMENDEDC BEGINS
+*/
+
+
+.recommendedc-prev {
+	padding: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+	.recommendedc-prev a {
+		color: black;
+	}
+
+
+	.recommendedc-prev-title {
+		letter-spacing: .05em;
+		margin: 0px 0px 10px 0px;
+		line-height: 1.4em;
+		text-transform: uppercase;
+	}
+
+	.recommendedc-prev-category {
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+	}
+
+	.recommendedc-prev-title a:hover .recommendedc-prev {
+		border: 1px solid red;
+	}
+
+	.recommendedc-prev a:hover .recommendedc-prev a {
+		color: white;
+	}
+
+
+
+/*
+	SIDEBAR RECOMMENDEDC ENDS; 
+*/
+
+
 /*
 **************************************************************** 
 ----------------------------------------------------------------
@@ -987,7 +1031,6 @@ CATEGORY PAGE
 
 .category-header-wrapper {
 	background: #3E403F;
-
 	-webkit-box-shadow: inset 0px -3px 6px 0px rgba(50, 50, 50, 0.82);
 	-moz-box-shadow:    inset 0px -3px 6px 0px rgba(50, 50, 50, 0.82);
 	box-shadow:         inset 0px -3px 6px 0px rgba(50, 50, 50, 0.82);

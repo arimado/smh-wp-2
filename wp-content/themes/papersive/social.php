@@ -14,4 +14,3 @@
 		<div class="social-front social"> </div> 
 	</div>
 </div>
-</div>

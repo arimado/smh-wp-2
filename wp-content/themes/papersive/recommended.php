@@ -7,7 +7,7 @@
 	        echo '<ul>';
 		while ( $demo_query->have_posts() ) {
 			$demo_query->the_post();
-			get_template_part( 'recommended-entry' );
+			get_template_part( 'recommendedc-entry' );
 		}
 	        echo '</ul>';
 	} else {
