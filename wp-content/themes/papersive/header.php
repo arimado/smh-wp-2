@@ -14,7 +14,12 @@
 		<header id="header" role="banner">
 			<nav id="menu" role="navigation">
 				<div id="search">
-				<?php get_search_form(); ?>
+				<?php
+				if ( !is_search() ) :
+					get_search_form(); 
+				endif;
+
+				 ?>
 
 				</div> 
 				<div id="showLeftPush" class="navicon"></div>

@@ -450,10 +450,10 @@ HEADER
 
 		.article-preview-title {
 			font-size: 1.4em;
-			letter-spacing: 1px;
+			letter-spacing: 0px;
 			line-height: 1.3em;
 			padding: 20px 0px 10px 30px;
-			font-weight: 900;
+			font-weight: 700;
 		}
 
 		.article-preview:hover .article-preview-line { 
@@ -484,6 +484,7 @@ HEADER
 
 		.article-preview-tag {
 			padding: 10px 10px 10px 30px;
+			font-weight: 900;
 		}
 
 /*
@@ -872,6 +873,16 @@ RELATED CONTENT
 			margin: 0px 10px 0px 0px;
 		}
 
+		.related-post-wrapper:nth-child(2n+2) .related-b-post {
+			margin: 0px 0px 0px 10px;
+		}
+
+		.related-post-wrapper:nth-child(2n+1) .related-b-post {
+			margin: 0px 10px 0px 0px;
+		}
+
+
+
 			.related-img-cat {
 				position: relative;
 			}
@@ -927,6 +938,15 @@ RELATED CONTENT
 		.related-post:hover .related-title a{
 			background: black;
 			color: white;
+		}
+
+		.related-b-post:hover {
+			background: black;
+		}
+
+		.related-b-post:hover .related-title a{
+			background: black;
+			color: white;
 		}	
 
 /*********  
@@ -948,12 +968,15 @@ CATEGORY PAGE
  ******/
 
 .category-header-wrapper {
-	background: black;
+	background: #3E403F;
+
+	-webkit-box-shadow: inset 0px -3px 6px 0px rgba(50, 50, 50, 0.82);
+	-moz-box-shadow:    inset 0px -3px 6px 0px rgba(50, 50, 50, 0.82);
+	box-shadow:         inset 0px -3px 6px 0px rgba(50, 50, 50, 0.82);
 }
 
 .category-header {
 	color: white;
-	border-bottom: 5px solid black;
 	
 	background-size: cover; 
 }
@@ -961,6 +984,10 @@ CATEGORY PAGE
 	.category-page-txt {
 		padding: 90px 90px 90px 90px;
 		background-color: rgba(0, 0, 0, 0.3);
+	}
+
+	.category-page-txt a {
+		color: white;
 	}
 
 	.category-page-title {
@@ -971,7 +998,15 @@ CATEGORY PAGE
 	}
 
 	.category-page-description {
-		font-family: 'Lato';
+		font-family: 'Open Sans';
+		width: 600px;
+		font-size: 1.3em;
+		font-weight: 100;
+		line-height: 1.4em;
+	}
+
+	.bold-smh a {
+		font-weight: 600;
 	}
 
 .category-content {
@@ -981,11 +1016,6 @@ CATEGORY PAGE
 	.cat-title-txt-wrap {
 			text-align: center;
 	}
-
-	/*
-	BIG FEATURE BEGIN
-*/
-
 
 
 
@@ -1105,7 +1135,78 @@ CATEGORY PAGE
 	BIG FEATURE END
 */
 
+/*********  
+----------------------------------------------------------------
+SEARCH PAGE 
+----------------------------------------------------------------
+ ******/
 
+
+
+#searchform-page {
+	margin: 0 0 40px 0;
+}
+
+
+.footer {
+	
+}
+	input:focus {
+		outline: 0 none;
+	}
+
+	form {
+	}
+
+	#search-input-page {
+	    -moz-border-left-colors: none;
+	    -moz-border-right-colors: none;
+	    -moz-border-top-colors: none;
+	    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+	    border-color: -moz-use-text-color -moz-use-text-color #fff;
+	    -moz-border-bottom-colors: #fff;
+	    border-image: none;
+	    border-radius: 0;
+	    border-style: none none solid;
+	    border-width: 0 0 1px;
+	    color: #fff;
+	    font-family: 'Lato',sans-serif;
+	    font-size: 3em;
+	    font-size-adjust: 0.53;
+	    font-style: normal;
+	    font-weight: 200;
+	    letter-spacing: 2px;
+	    padding: 0.6em 0.8em 0.4em 0;
+	    margin: auto;
+	    width:95%;
+	}
+	#submit-search-button-page {
+	    border: medium none;
+	    color: #000;
+	    cursor: pointer;
+	    font-family: helvetica;
+	    font-size: 1em;
+	    font-weight: bold;
+	    letter-spacing: 1px;
+	    margin-top: 10px;
+	   	padding: 10px;
+	    text-transform: uppercase;
+	    background: none;
+	    color: white;
+	    border: 2px solid white;
+	    display: block
+	}
+
+	#submit-search-button-page:hover {
+		background: white;
+		color: black;
+	}
+
+ /*********  
+----------------------------------------------------------------
+SIDE MENU
+----------------------------------------------------------------
+ ******/
 /* General styles for all menus */
  
 .cbp-spmenu {

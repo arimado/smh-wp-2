@@ -71,8 +71,7 @@
 		    while( $my_query->have_posts() ) {  
 		    $my_query->the_post(); ?>
 
-
-			<div class="related-post-wrapper">
+		    <div class="related-post-wrapper">
 				<div class="related-post">
 					<div class="related-img-cat">
 						<div class="related-cat-wrap">
@@ -83,7 +82,6 @@
 					<div class="related-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></div> 
 				</div>
 			</div> 
-
 
 
 			<?php

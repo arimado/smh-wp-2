@@ -16,7 +16,7 @@ $args = array(
 ?>
 <?php $the_query = new WP_Query( $args );?>
 <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-<?php get_template_part( 'index-entry' ); ?>
+<?php get_template_part( 'related-entry' ); ?>
 <?php comments_template(); ?>
 <?php endwhile; endif; ?> 
 <?php get_template_part( 'nav', 'below' ); ?>
@@ -24,4 +24,4 @@ $args = array(
 <?php get_sidebar(); ?>
 </section>
 
-<?php get_footer(); ?>
+<?php get_footer(); ?> 
