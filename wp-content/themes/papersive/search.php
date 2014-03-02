@@ -17,7 +17,7 @@
 	</div>
 
 	<div class="category-header header">
-		<div class="category-page-txt">
+		<div class="search-page-txt">
 			<div class="search-page-title entry-title"><?php get_template_part('searchform-page'); ?></div>
 			<div class="search-page-description"><h1 class="entry-title"><?php printf( __( 'Search Results for: %s', 'blankslate' ), get_search_query() ); ?></h1></div> 
 		</div>

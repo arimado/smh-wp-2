@@ -1,4 +1,4 @@
-<div class="related-post-wrapper post">
+<div class="index-entry-post-wrapper post">
 	<div class="index-entry-b-post">
 		<div class="related-img-cat">
 			<div class="related-link-wrap">

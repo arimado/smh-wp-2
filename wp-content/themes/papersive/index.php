@@ -23,7 +23,7 @@ $args = array(
 <?php comments_template(); ?>
 <?php endwhile; ?> 
 <?php endif; ?> 
-	</div>
+</div>
 
 
 <?php //get_template_part( 'nav', 'below' ); ?> 
@@ -31,11 +31,6 @@ $args = array(
 
 	
 </div>
-
-<nav id="nav-below" class="navigation" role="navigation">
-<div class="nav-next"><div class="nav-button">LOAD MORE</div></div>
-</nav> 
-
 
 <nav id="index-pagination">
     <ul>

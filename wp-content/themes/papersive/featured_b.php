@@ -56,10 +56,11 @@
 											<div class="ft-tag table-cell empty"></div>
 										</div> 
 						<div class="ft-tag-author">By <?php the_author_meta( first_name ); ?> <?php the_author_meta( last_name ); ?> </div> 
-					</div><!-- end ft-title-txt-wrap -->
+						<div class="ft-img-via"><a href="<?php echo get_post_meta($post->ID, "image-via-link", true); ?>">  <?php echo get_post_meta($post->ID, "image-via", true); ?></a> </div>
+						</div><!-- end ft-title-txt-wrap -->
 					<div class="dark-overlay"></div>
 
-						
+							
 						
 					</div> <!-- end ft-img --> 
 

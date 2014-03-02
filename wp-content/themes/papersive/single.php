@@ -46,6 +46,7 @@
 											<div class="ft-tag table-cell empty"></div>
 										</div> 
 						<div class="ft-tag-author">By <?php the_author_meta( first_name ); ?> <?php the_author_meta( last_name ); ?> </div> 
+						<div class="ft-img-via"><a href="<?php echo get_post_meta($post->ID, "image-via-link", true); ?>">  <?php echo get_post_meta($post->ID, "image-via", true); ?></a> </div>
 					</div><!-- end ft-title-txt-wrap -->
 					<div class="dark-overlay"></div>
 </div>
@@ -87,9 +88,12 @@
 		    while( $my_query->have_posts() ) {  
 		    $my_query->the_post(); ?>
 
-		    <div class="related-post-wrapper">
+		    <div class="related-post-wrapper post">
 				<div class="related-post">
 					<div class="related-img-cat">
+						<div class="related-link-wrap">
+							<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"></a>
+						</div> 
 						<div class="related-cat-wrap">
 							<div class="related-cat"><?php the_category( ', ' ); ?></div> 
 						</div>
@@ -98,7 +102,6 @@
 					<div class="related-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></div> 
 				</div>
 			</div> 
-
 
 			<?php
 			 	}

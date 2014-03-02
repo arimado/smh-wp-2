@@ -1,5 +1,5 @@
 <form role="search" method="get" id="searchform-page" action="<?php echo home_url( '/' ); ?>">
-    <div > 
+    <div> 
     	<?php
     		$searchquery = get_search_query();
     		$upload_dir = wp_upload_dir();

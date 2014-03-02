@@ -59,14 +59,7 @@ function smh_scroll_js(){
 }
 add_action('wp_enqueue_scripts', 'smh_scroll_js');  
   
-function smh_trigger_js() {
-  wp_register_script( 'manual_trigger',  get_stylesheet_directory_uri() . '/scripts/manual-trigger.js', array('jquery'),null,true );
-  if( ! is_singular() ) {
-    wp_enqueue_script('manual_trigger');
-  }
-}
-
-add_action('wp_enqueue_scripts', 'smh_trigger_js');  
+ 
 
 // INIT SCRIPT
 
@@ -75,37 +68,19 @@ function smh_infinite_scroll_js() {
   <script>
   
 
-  // var infinite_scroll = {
-  //   loading: {
-  //     img: "<?php echo get_template_directory_uri(); ?>/images/ajax-loader.gif",
-  //     msgText: "<?php _e( 'Loading the next set of posts...', 'custom' ); ?>",
-  //     finishedMsg: "<?php _e( 'All posts loaded.', 'custom' ); ?>"
-  //   },
-  //   "nextSelector":"#index-pagination .index-pagination-next a",
-  //   "navSelector":"#index-pagination", 
-  //   "itemSelector":".post",
-  //   "contentSelector":"#scroll",
-  //   "behaviour":"twitter"
-  // };
-  // jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
-
-  // jQuery( ".nav-button" ).click(function() {
-  //    jQuery(document).infinitescroll('retrieve');
-  //    alert('click');
-  //    return false;
-  // });
-  //
-
- jQuery('#scroll').infinitescroll({
-
-  navSelector  : "#index-pagination li",
-                 // selector for the paged navigation (it will be hidden)
-  nextSelector : "#next a",
-                 // selector for the NEXT link (to page 2)
-  itemSelector : ".post",
-                 // selector for all items you'll retrieve
-  behavior: "twitter"
-});
+  var infinite_scroll = {
+    loading: {
+      img: "<?php echo get_template_directory_uri(); ?>/images/ajax-loader.gif",
+      msgText: "<?php _e( 'Loading the next set of posts...', 'custom' ); ?>",
+      finishedMsg: "<?php _e( 'All posts loaded.', 'custom' ); ?>"
+    },
+    "nextSelector":"#index-pagination .index-pagination-next a",
+    "navSelector":"#index-pagination", 
+    "itemSelector":".post",
+    "contentSelector":"#scroll",
+    "behaviour":"twitter"
+  };
+  jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
 
 
   </script>
