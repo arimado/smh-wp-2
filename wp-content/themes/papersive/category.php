@@ -16,17 +16,21 @@
 			<div class="category-page-description"><?php if ( '' != category_description() ) echo apply_filters( 'archive_meta', '<div class="archive-meta">' . category_description() . '</div>' ); ?></div>
 		</div>
 	</div>
-	
+
 </div>
 
 
 <section id="content" role="main" class="category-content">  
 	<div class="content">
+		<div class="content-posts">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<?php get_template_part( 'related-entry' ); ?>
 		<?php endwhile; endif; ?>
+	</div>
+
 		<?php get_template_part( 'nav', 'below' ); ?> 
 	</div>
+
 	<?php get_sidebar(); ?>
 </section>
 <?php get_sidebar(); ?>

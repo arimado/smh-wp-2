@@ -44,7 +44,7 @@ register_sidebar( array (
 'after_widget' => "</li>",
 'before_title' => '<h3 class="widget-title">',
 'after_title' => '</h3>',
-) );
+) ); 
 }
 function blankslate_custom_pings( $comment )
 {
