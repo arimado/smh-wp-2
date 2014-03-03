@@ -15,6 +15,10 @@
 
 				$coverImage = MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'cover-image');
 
+				$coolThingSidebar = 'padding-right: 40px';
+
+
+
 				?>	
 <div class="ft-img" style="background: url('<?php echo $coverImage; ?>');background-position:top;background-size:cover;">
 
@@ -53,21 +57,27 @@
 <!-- END OF ARTICLE HEADER -->  
 <section id="content" role="main">
 
-<div class="content">
-	<div class="main-content">
-	
-		<div class="article-content">
-			<?php $the_author = get_the_author() ?>
-			<?php the_content(); ?> 
-		</div>
-	</div>
-	<div class="related-content">  	 
 
+		<?php if (in_category('cool-thing')) { ?>
+			<div class="article-content">
+				<?php $the_author = get_the_author(); ?>
+				<?php the_content(); ?> 
+			</div>
+		<?php } ?>
+	
+
+<div class="content">
+	<?php if (!in_category('cool-thing')) { ?>
+			<div class="article-content">
+				<?php $the_author = get_the_author(); ?>
+				<?php the_content(); ?> 
+			</div>
+		<?php } ?>
+	<div class="<?php if (in_category('cool-thing'))  { echo 'related-content-cool'; } else { echo 'related-content'; }?>">  	 
 			<div class="side-title">
 			    <div class="side-title-txt">RELATED</div>
 			    <div class="side-title-line"></div>
 			</div>
-
 		<?php
 			 $orig_post = $post;  
 		    global $post;  
@@ -111,7 +121,7 @@
 			?>
 	</div> 
 </div>
-<div class="sidebar">
+<div class="sidebar" style="<?php if (in_category('cool-thing'))  { echo 'padding-right: 40px'; } ?>">
 		<?php get_sidebar(); ?>
 </div>
 

@@ -925,14 +925,16 @@ ARTICLE
 
 .article-content {
 	padding: 0px 40px 0px 40px;
-	line-height: 1.9em;
+	line-height: 1.8em;
 	font-size: 1.1em;
 }
 
+
 .article-content h2 {
-	line-height: 1.2em;
-	font-size: 1.6em;
+	line-height: 1.4em;
+	font-size: 1.3em;
 	font-weight: 600;
+	font-family: 'Open sans';
 }
 
 .article-content a {
@@ -964,6 +966,12 @@ RELATED CONTENT
 
 .related-content {
 	padding: 0px 50px 0px 50px;
+	margin: 0 0 20px 0;
+	overflow: hidden;
+}
+
+.related-content-cool {
+	padding: 0px 40px 0px 40px;
 	margin: 0 0 20px 0;
 	overflow: hidden;
 }

@@ -1,0 +1,55 @@
+#canvasWrap {
+	margin: auto;
+	width: 800px;
+	height: 500px;
+}
+
+
+
+
+#canvasBg {
+	background:#FFFFFF;
+	margin: 0px 0px 0px 0px;
+	display:block;
+	position:relative;
+	position: ;
+}
+
+#canvasJet, #canvasEnemy, #canvasHUD, #canvasEnd, #canvasHUDbg {
+	margin: -500px 0px 0px 0px;
+	display:block;
+	position:relative;
+}
+
+#inner {
+	position: absolute;
+	top: 400px;
+	left: 510px;
+	color: white;
+	background: black;
+	font-size: 30px;
+	font-family: helvetica;
+	font-weight: bold;
+	padding: 7px 10px 10px 10px;
+}
+
+#aoy-link-wrap {
+	position: absolute;
+	top: 480px;
+	left: 350px;
+	padding: 10px;
+}
+
+#aoy-link {
+	color: white;
+	background: black;
+	font-family: helvetica;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 20px;
+	width: 520px;
+}
+
+.playWrap {
+  
+}
