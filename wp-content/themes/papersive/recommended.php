@@ -1,7 +1,12 @@
 <div class="recommended-main side-block">
 <?php
 	// The Query
-	$demo_query = new WP_Query( 'tag=recommended' );
+
+	$args = array(
+		'tag' => 'recommended',
+		'posts_per_page' => 5
+	); 
+	$demo_query = new WP_Query($args);
 	// The Loop
 	if ( $demo_query->have_posts() ) {
 	        echo '<ul>';

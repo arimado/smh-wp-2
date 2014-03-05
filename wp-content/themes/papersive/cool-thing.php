@@ -1,7 +1,13 @@
 <div class="latest-thing-main side-block">
 <?php
+
+
+	$args = array(
+		'cat' => 6,
+		'posts_per_page' => 1
+	); 
 	// The Query
-	$demo_query = new WP_Query( 'cat=6' );
+	$demo_query = new WP_Query( $args );
 	// The Loop
 	if ( $demo_query->have_posts() ) {
 	        echo '<ul>';

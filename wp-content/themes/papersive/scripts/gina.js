@@ -993,6 +993,8 @@ document.addEventListener('DOMContentLoaded',function(){
 
 	*/
 
+	alert('gina js loaded');
+
 }) 
 
 

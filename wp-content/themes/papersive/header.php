@@ -8,8 +8,18 @@
 		<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/classie.js"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+		
+		
+
 	</head>
 	<body <?php body_class('cbp-spmenu-push'); ?>>
+		<?php
+
+		if ( is_page('258') ) {
+		  echo 'hi';
+		}
+
+		?>
 		<div id="wrapper" class="hfeed">
 		<header id="header" role="banner">
 			<nav id="menu" role="navigation">
@@ -55,4 +65,6 @@
 
 			<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/global.js"></script>
 		</header>
+
+		<?php if (is_page(258)) { echo 'hi'; }?> 
 <div id="container"> 

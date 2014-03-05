@@ -113,8 +113,6 @@ LAYOUT
 }
 
 .logo {
-	font-family: 'Lato';
-	text-transform: uppercase;
 	text-align: center;
 	color: white;
 	position: relative;
@@ -132,16 +130,18 @@ LAYOUT
 
 
 	.logo-main {
-		font-size: 1.6em;
+		font-size: 2em;
+		font-family: 'Linotext Std';
 		font-weight: 900;
+		letter-spacing: 0;
 	}
 
 	.logo-line {
-		border-bottom: 3px solid white;
-		width: 250px;
+		border-bottom: 1px solid white;
+		width: 260px;
 		margin: auto;
 		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 
 	}
 
@@ -149,6 +149,9 @@ LAYOUT
 		letter-spacing: 3px;
 		font-weight: 600;
 		font-size: .8em;
+		font-family: 'Lato';
+		text-transform: uppercase;
+		font-weight: asd
 	}
 
 
@@ -229,7 +232,7 @@ MENU
 	    text-transform: uppercase;
 	    width: 16px;
 	    height: 16px;
-	    background: url('http://localhost:8888/smh-wp-2/wp-content/uploads/2014/02/search-icon-16x16.png'); 
+	    background: url('images/search-icon-16x16.png'); 
 	}
 
 	#submit-search-button {
