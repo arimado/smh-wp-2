@@ -35,7 +35,7 @@
 													<div class="ft-tag-main-line"></div>
 												</div>
 											</div>
-											<div class="ft-tag-txt table-cell"><?php _e( '', 'blankslate' ); ?><?php the_category( ', ' ); ?></div> 
+											<div class="ft-tag-txt table-cell"><?php _e( '', 'blankslate' ); ?><?php if (!in_category('cool-thing')) { the_category( ', ' ); } else { ?> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php echo get_post_meta($post->ID, "thing", true);; ?></a> <?php } ?></div> 
 											<div class="ft-tag table-cell">
 												<div style="position:relative">
 													<div class="ft-tag-main-line"></div>
@@ -54,17 +54,38 @@
 
 		<?php if (in_category('cool-thing')) { ?>
 			<div class="article-content">
+				<div class="article-controls ctrl-top">
+					<div class="article-social"><?php echo do_shortcode('[ssba]') ?></div>
+					<div class="article-txt-ctrl"><a href="#a">A+</a></div> 
+				</div>
 				<?php $the_author = get_the_author(); ?>
+				<div class="article-post-content">
 				<?php the_content(); ?> 
+				</div>
+				<div class="article-controls ctrl-bot">
+					<div class="article-social"><?php echo do_shortcode('[ssba]') ?></div>
+					<div class="article-txt-ctrl"><a href="#a">A+</a></div> 
+				</div>
 			</div>
 		<?php } ?>
 	
 
 <div class="content">
 	<?php if (!in_category('cool-thing')) { ?>
-			<div class="article-content">
+
+			<div class="article-content .regular-article">
+				<div class="article-controls ctrl-top">
+					<div class="article-social"><?php echo do_shortcode('[ssba]') ?></div>
+					<div class="article-txt-ctrl"><a href="#a">A+</a></div> 
+				</div>
 				<?php $the_author = get_the_author(); ?>
+				<div class="article-post-content">
 				<?php the_content(); ?> 
+				</div>
+				<div class="article-controls ctrl-bot">
+					<div class="article-social"><?php echo do_shortcode('[ssba]') ?></div>
+					<div class="article-txt-ctrl"><a href="#a">A+</a></div> 
+				</div>
 			</div>
 		<?php } ?>
 	<div class="<?php if (in_category('cool-thing'))  { echo 'related-content-cool'; } else { echo 'related-content'; }?>">  	 

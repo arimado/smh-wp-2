@@ -106,7 +106,7 @@ LAYOUT
 */
 
 .logo-wrap {
-	padding-top: 60px;
+	padding-top: 30px;
 	width: 100%;
 	position: absolute;
 	top: 0;
@@ -567,6 +567,8 @@ SIDEBAR
 	position: relative;
 	margin-bottom: 20px;
 	border: 3px solid black;
+	padding: 10px;
+	overflow: hidden;
 }
 
 
@@ -579,15 +581,28 @@ SIDEBAR
 		padding-right: 10px;
 		z-index: 90;
 		letter-spacing: 1px;
-		padding: 20px;
-		width: 80%;
+		padding: 10px;
+		float: left;
 	}
 
-	.side-title-line {
-		position: absolute;
-		width: 100%;
-		top: 0;
-		padding-top: 27px;
+	.side-more-link {
+		float: right;
+		
+	}
+
+	.side-more-link a {
+		padding: 12px;
+		background: black;
+		display: block;
+		color: white;
+		text-transform: uppercase;
+		font-family: 'helvetica';
+		font-size: .8em;
+		letter-spacing: .2em;
+	}
+
+	.side-more-link a:hover {
+		background: grey;
 	}
 
 
@@ -607,6 +622,7 @@ SIDEBAR
 	.latest-thing-main {
 		position: relative;
 		color: white;
+		background: black;
 	}
 
 	.latest-thing-main a {
@@ -614,9 +630,9 @@ SIDEBAR
 	}
 
 	.latest-thing-main-img {
-		background: grey;
 		height: 410px;
 		width: 100%; 
+		opacity: .7;
 		overflow: hidden;
 	}
 
@@ -634,6 +650,15 @@ SIDEBAR
 		text-align: center; 
 		padding: 50px 0px 0px 0px;
 		height: 322px;
+	}
+
+	.latest-thing-link {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
 	}
 
 		.latest-thing-main-border-inner {
@@ -696,7 +721,7 @@ SIDEBAR
 
 				}
 
-				.latest-thing-main:hover .latest-thing.side-title-txt {
+				.latest-thing-main:hover .latest-thing .side-title-txt {
 					border: 5px solid red;
 				}
 
@@ -730,6 +755,17 @@ SIDEBAR
 /*
 	SOCIAL BLOCK
 */
+
+.side-hustle {
+	font-family: 'Linotext Std'; 
+	font-size: 2em;
+	margin: 0 0 0 10px;
+}
+
+.side-title-txt.social {
+	padding: 5px 0 0px 10px !important;
+	margin: 0 0 -2px 0px !important;
+}
 
 
 input:focus {
@@ -922,6 +958,64 @@ ARTICLE
 
 /*
 
+	ARTICLE CONTROLS
+
+*/
+
+.article-controls {
+	overflow: hidden;
+	border: 3px solid #EDEDED;
+}
+
+	.ctrl-top {
+		margin-bottom: 20px;
+	}
+
+	.ctrl-bot {
+		margin: 20px 0 20px 0;
+	}
+
+	.article-social {
+		float: left;
+		padding: 0 0 0 6px;
+	}
+
+	#ssba img {
+		padding: 11px 6px 12px 6px !important;
+	}
+
+	.article-txt-ctrl {
+		float: right;
+		font-size: ;
+		padding: 11px 10px 10px 10px;
+	}
+
+	.article-txt-ctrl a {
+		font-size: 1.3em;
+		color: black !important;
+		font-family: 'helvetica';
+		font-weight: 300;
+		display: block;
+		padding: 3px 12px 2px 12px;
+		background: #000;
+		color: white !important;
+	}
+
+	.article-txt-ctrl a:hover {
+		background: #CCC;
+	}
+
+
+
+/*
+
+	ARTICLE CONTROLS END
+
+*/
+
+
+/*
+
 	ARTICLE BEGINS
 
 */
@@ -930,6 +1024,11 @@ ARTICLE
 	padding: 0px 40px 0px 40px;
 	line-height: 1.8em;
 	font-size: 1.1em;
+	margin: auto;
+}
+
+.regular-article {
+	max-width: 668px;
 }
 
 
@@ -968,7 +1067,7 @@ RELATED CONTENT
  */
 
 .related-content {
-	padding: 0px 50px 0px 50px;
+	padding: 0px 40px 0px 40px;
 	margin: 0 0 20px 0;
 	overflow: hidden;
 }
@@ -1307,7 +1406,7 @@ GLOBAL
 
 #nav-below {
 	width: 100%;
-	
+	overflow: auto;
 	display: block;
 	margin-top: 20px;
 }
@@ -1553,6 +1652,11 @@ RESPONSIVE
 		width: 25%;
 	}
  } 
+ @media only screen and (max-width : 1050px) {
+ #search {
+		display: none;
+	}
+}
 
  @media only screen and (max-width : 995px) {
 
@@ -1723,46 +1827,24 @@ RESPONSIVE
 
 
  }
+
+
+
+ @media only screen and (max-width : 730px) {
+
+
+	.table-cell.empty.ft-tag {
+		width: 22%;
+	}
+
+ }
+
+
  @media only screen and (max-width : 700px) {
 
 
-.logo-wrap {
-		padding-top: 100px;
-		width: 100%;
-		position: absolute;
-		top: 0;
-	}
 
-	.logo {
-		width: auto;
-		margin: auto;
-	}
-
-
-		.logo-main {
-			font-size: 1em;
-			font-weight: 900;
-		}
-
-		.logo-line {
-			border-bottom: 2px solid white;
-			width: 200px;
-			margin: auto;
-			margin-top: 10px;
-			margin-bottom: 10px;
-
-		}
-
-		.logo-tag {
-			letter-spacing: 3px;
-			font-weight: 600;
-			font-size: .6em;
-			font-weight: 400;
-		}
-
-	#search {
-		display: none;
-	}
+	
 
 /* CATEGOR BEGINS */
 
@@ -1807,6 +1889,12 @@ RESPONSIVE
 		float: none;
 		height: auto;
 	}
+
+	.related-content {
+		margin: 0 !important;
+		padding: 0 0 0 0 !important;
+	}
+
 
 
 	
@@ -2018,6 +2106,11 @@ RESPONSIVE
 		padding: 0px 0px 0px 0px;
 	}
 
+		.article-post-content p {
+			line-height: 1.8em;
+			font-size: .9em;
+		}
+
 	.related-content {
 	padding: 0px 10px 0px 10px;
 	}
@@ -2066,6 +2159,48 @@ RESPONSIVE
 			margin: 0px 0px 0px 0px;
 		}
 
+	.logo-wrap {
+	
+		padding: 23px 0 20px 80px;
+		width: auto;
+		position: absolute;
+		top: 0; 
+	
+	}
+
+	.logo {
+		text-align: center;
+		color: white;
+		position: relative;
+		z-index: 99999999;
+		width: auto;
+		margin: auto;
+		margin-top: 0px;
+		letter-spacing: .2em;
+	}
+
+		.logo a {
+			color: white;
+			text-decoration: none;
+		}
+
+
+		.logo-main {
+			font-size: 2em;
+			font-family: 'Linotext Std';
+			font-weight: 900;
+			letter-spacing: 0;
+		}
+
+		.logo-line {
+			display: none;
+
+		}
+
+		.logo-tag {
+			display: none;
+		}
+
  }
 
 @media only screen and (max-width : 520px) {
@@ -2100,14 +2235,25 @@ RESPONSIVE
 }
 
 
-  @media only screen and (max-width : 730px) {
-
-
-	.table-cell.empty.ft-tag {
-		width: 22%;
+@media only screen and (max-width : 560px) {
+	.logo-main {
+			font-size: 1.5em;
+			font-family: 'Linotext Std';
+			font-weight: 900;
+			letter-spacing: 0;
 	}
 
- }
+	.logo-wrap {
+	
+		padding: 25px 0 20px 80px;
+		width: auto;
+		position: absolute;
+		top: 0; 
+	
+	}
+}
+
+
 
 @media only screen and (max-width : 450px) {
 
@@ -2120,8 +2266,12 @@ RESPONSIVE
 
 	.article-content {
 		padding: 0px 0px 0px 0px;
+		
+	}
+
+	.article-post-content p {
 		line-height: 1.9em;
-		font-size: 1em;
+		font-size: .8em;
 	}
 
 	.article-content h2 {
@@ -2204,7 +2354,43 @@ RESPONSIVE
 
 */
 
+@media screen and (max-width: 55.1875em){
 
+	.cbp-spmenu-horizontal {
+		font-size: 75%;
+		height: 110px;
+	}
+
+	.cbp-spmenu-top {
+		top: -110px;
+	}
+
+	.cbp-spmenu-bottom {
+		bottom: -110px;
+	}
+
+}
+
+@media screen and (max-height: 26.375em){
+
+	.cbp-spmenu-vertical {
+		font-size: 90%;
+		width: 190px;
+	}
+
+	.cbp-spmenu-left,
+	.cbp-spmenu-push-toleft {
+		left: -190px;
+	}
+
+	.cbp-spmenu-right {
+		right: -190px;
+	}
+
+	.cbp-spmenu-push-toright {
+		left: 190px;
+	}
+}
 /*
 	ARTICLE ENDS
 */

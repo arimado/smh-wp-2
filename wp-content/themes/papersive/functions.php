@@ -91,6 +91,24 @@ function smh_infinite_scroll_js() {
 }
 add_action( 'wp_footer', 'smh_infinite_scroll_js',100 );
 
+
+// ***************************************************
+//    Intercept Simple Share Buttons Adder output.
+// ***************************************************
+
+
+function my_remove_ssba_from_content($content) {
+  global $post;
+  if ($post !== '') {
+    $post->post_content .= '[ssba_hide]';
+  }
+  return $content;
+}
+if (shortcode_exists('ssba')) {
+  add_filter( 'the_content', 'my_remove_ssba_from_content', 9);
+  add_filter( 'the_excerpt', 'my_remove_ssba_from_content', 9);
+}
+
 // ***************************************************
 // 					WIDGETS 
 // ***************************************************
@@ -118,7 +136,7 @@ $title = apply_filters( 'widget_title', $instance['title'] );
 // before and after widget arguments are defined by themes
 echo $args['before_widget'];
 if ( ! empty( $title ) )
-echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title . '</div><div class="side-title-line"></div></div></div>';
+echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title . '</div><div class="side-more-link"><a href="#">More</a></div><div class="side-title-line"></div></div></div>';
 
 // This is where you run the code and display the output
 echo get_template_part( 'cool-thing' ); 
@@ -184,7 +202,7 @@ $title = apply_filters( 'widget_title', $instance['title'] );
 // before and after widget arguments are defined by themes
 echo $args['before_widget'];
 if ( ! empty( $title ) )
-echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title . '</div><div class="side-title-line"></div></div></div>';
+echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title . '</div></div><div class="side-title-line"></div></div></div>';
 
 // This is where you run the code and display the output
 echo get_template_part( 'recommended' ); 
@@ -251,7 +269,7 @@ $title = apply_filters( 'widget_title', $instance['title'] );
 // before and after widget arguments are defined by themes
 echo $args['before_widget'];
 if ( ! empty( $title ) )
-echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title . '</div><div class="side-title-line"></div></div></div>';
+echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt social">' . $title . '<span class="side-hustle">Hustled</span></div><div class="side-title-line"></div></div></div>';
 
 // This is where you run the code and display the output
 echo get_template_part( 'social' ); 

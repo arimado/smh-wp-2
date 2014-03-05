@@ -51,7 +51,7 @@
 
 		<div class="category-header-wrapper" style="background-image: url('<?php if (function_exists('z_taxonomy_image_url')) echo z_taxonomy_image_url(); ?>'); background-size: cover;">
 			<div class="category-header header">
-				<div class="category-page-txt">
+				<div class="search-page-txt">
 					<div class="search-page-title entry-title"><?php get_template_part('searchform-page'); ?></div>
 					<div class="search-page-description"><?php _e( "Fuck, spewin. Didn't find anything.", 'blankslate' ); ?></h1></div> 
 				</div>
