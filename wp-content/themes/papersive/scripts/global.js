@@ -8,9 +8,11 @@ showLeftPush.onclick = function() {
     classie.toggle( menuLeft, 'cbp-spmenu-open' );
 };
 
-// Increase Font Script
+
 
 jQuery(document).ready(function() {
+
+	// Increase Font Script
 
 	var fontSizes = ['1em', '1.2em', '.8em', '.9em']; 
 	var fontButton = '.article-txt-ctrl a'; 
@@ -31,5 +33,10 @@ jQuery(document).ready(function() {
 
 	});
 
-});
+	// Recommended C hover 
+	jQuery(".recommendedc-prev").click(function(){
+	     window.location=jQuery(this).find(".recommendedc-prev-title a").attr("href"); 
+	     return false; 
+	});
 
+});

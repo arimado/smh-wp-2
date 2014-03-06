@@ -9,7 +9,7 @@
 	$demo_query = new WP_Query($args);
 	// The Loop
 	if ( $demo_query->have_posts() ) {
-	        echo '<ul>';
+	        echo '<ul class="clickables">';
 		while ( $demo_query->have_posts() ) {
 			$demo_query->the_post();
 			get_template_part( 'recommendedc-entry' );
