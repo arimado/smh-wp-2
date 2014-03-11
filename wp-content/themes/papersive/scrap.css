@@ -151,3 +151,86 @@ scrap.css
 /*
 	BIG FEATURE END
 */
+
+
+/*
+	ARTICLE PREVIEW BEGINS
+*/
+
+.article-preview {
+	overflow: hidden;
+	margin: 0px 0px 20px 0px;
+	color: black;
+	width: 100%;
+}
+	.article-thumb-wrap {
+		display: block;
+		float: left;
+		width: 335px;
+		height: 210px;
+		overflow: hidden;
+	}	
+
+	.article-thumb-wrap img {
+		width: 100%;
+		height: auto;
+	}	
+
+	.article-thumb {
+		
+		background: grey;
+		border-right: 5px solid black;
+		
+	}
+
+	.article-preview-txt {
+		float: left;
+		text-transform: uppercase;
+		font-weight: 700;
+		float: left;
+		width: 370px;
+	}
+
+		.article-preview-title {
+			font-size: 1.4em;
+			letter-spacing: 0px;
+			line-height: 1.3em;
+			padding: 20px 0px 10px 30px;
+			font-weight: 700;
+		}
+
+		.article-preview:hover .article-preview-line { 
+			width: 200px;
+		}
+
+		.article-preview:hover {
+			background: #efefef;
+			cursor: pointer;
+			transition: .3s;
+		}
+
+		.article-preview-line {
+
+				border-bottom: 5px solid black;
+				width: 80px;
+				margin: 10px 10px 10px 30px;
+				-webkit-transition: width 0.5s;
+				-moz-transition: width 0.5s;
+				transition: width 0.5s;
+
+			}
+
+			.article-preview-line:hover {
+				
+	
+			}
+
+		.article-preview-tag {
+			padding: 10px 10px 10px 30px;
+			font-weight: 900;
+		}
+
+/*
+	ARTICLE PREVIEW ENDS
+*/
+

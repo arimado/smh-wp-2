@@ -151,8 +151,7 @@ array( 'description' => __( 'Sample widget based on WPBeginner Tutorial', 'wpb_w
 // This is where the action happens
 public function widget( $args, $instance ) {
 $title = apply_filters( 'widget_title', $instance['title'] );
-$category_id = get_cat_ID(6);
-$category_link = get_category_link( 6 );
+$category_link = get_category_link(6);
 // before and after widget arguments are defined by themes
 echo $args['before_widget'];
 if ( ! empty( $title ) )
@@ -221,10 +220,14 @@ array( 'description' => __( 'Shows the posts tagged with "recommended".', 'recom
 // This is where the action happens
 public function widget( $args, $instance ) {
 $title = apply_filters( 'widget_title', $instance['title'] );
+$tag_link = get_tag_link(7);
 // before and after widget arguments are defined by themes
 echo $args['before_widget'];
 if ( ! empty( $title ) )
-echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title . '</div></div><div class="side-title-line"></div></div></div>';
+echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title;
+echo '</div><div class="side-more-link"><a href="';
+echo $tag_link;
+echo '">More</a></div><div class="side-title-line"></div></div></div>';
 
 // This is where you run the code and display the output
 echo get_template_part( 'recommended' ); 
