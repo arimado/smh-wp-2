@@ -47,6 +47,9 @@
 						<div class="ft-img-via"><a href="<?php echo get_post_meta($post->ID, "image-via-link", true); ?>">  <?php echo get_post_meta($post->ID, "image-via", true); ?></a> </div>
 					</div><!-- end ft-title-txt-wrap -->
 					<div class="dark-overlay"></div>
+
+					<img src="<?php echo $coverImage; ?>" class="meta-image"/>
+
 </div>
 <!-- END OF ARTICLE HEADER -->  
 <section id="content" role="main">
@@ -88,7 +91,21 @@
 				</div>
 			</div>
 		<?php } ?>
-	<div class="<?php if (in_category('cool-thing'))  { echo 'related-content-cool'; } else { echo 'related-content'; }?>">  	 
+
+		<div class="tags">
+			<span class="tags-title">TAGS</span></br>
+			<?php the_tags('', '', ''); ?>
+		</div>
+
+		<div class="comments">
+			<div class="side-title">
+				    <div class="side-title-txt">COMMENTS</div>
+				    <div class="side-title-line"></div>
+				</div>
+			<?php disqus_embed('smhustle'); ?>
+		</div>
+
+		<div class="<?php if (in_category('cool-thing'))  { echo 'related-content-cool'; } else { echo 'related-content'; }?>">  	 
 			<div class="side-title">
 			    <div class="side-title-txt">RELATED</div>
 			    <div class="side-title-line"></div>
@@ -135,8 +152,9 @@
 			wp_reset_query();
 			?>
 	</div> 
+
 </div>
-<div class="sidebar" style="<?php if (in_category('cool-thing'))  { echo 'padding-right: 40px'; } ?>">
+<div class="sidebar-single" style="<?php if (in_category('cool-thing'))  { echo 'padding-right: 40px'; } ?>">
 		<?php get_sidebar(); ?>
 </div>
 

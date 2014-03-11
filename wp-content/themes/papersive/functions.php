@@ -109,6 +109,24 @@ if (shortcode_exists('ssba')) {
   add_filter( 'the_excerpt', 'my_remove_ssba_from_content', 9);
 }
 
+
+// ***************************************************
+//    DISQUS COMMENTS
+// ***************************************************
+
+
+function disqus_embed($disqus_shortname) {
+    global $post;
+    wp_enqueue_script('disqus_embed','http://'.$disqus_shortname.'.disqus.com/embed.js');
+    echo '<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = "'.$disqus_shortname.'";
+        var disqus_title = "'.$post->post_title.'";
+        var disqus_url = "'.get_permalink($post->ID).'";
+        var disqus_identifier = "'.$disqus_shortname.'-'.$post->ID.'";
+    </script>';
+}
+
 // ***************************************************
 // 					WIDGETS 
 // ***************************************************
@@ -133,11 +151,15 @@ array( 'description' => __( 'Sample widget based on WPBeginner Tutorial', 'wpb_w
 // This is where the action happens
 public function widget( $args, $instance ) {
 $title = apply_filters( 'widget_title', $instance['title'] );
+$category_id = get_cat_ID(6);
+$category_link = get_category_link( 6 );
 // before and after widget arguments are defined by themes
 echo $args['before_widget'];
 if ( ! empty( $title ) )
-echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title . '</div><div class="side-more-link"><a href="#">More</a></div><div class="side-title-line"></div></div></div>';
-
+echo '<div class="side-title-wrap"><div class="side-title"><div class="side-title-txt recommended">' . $title;
+echo '</div><div class="side-more-link"><a href="';
+echo $category_link;
+echo '">More</a></div><div class="side-title-line"></div></div></div>';
 // This is where you run the code and display the output
 echo get_template_part( 'cool-thing' ); 
 echo $args['after_widget'];

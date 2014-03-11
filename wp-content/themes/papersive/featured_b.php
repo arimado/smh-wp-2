@@ -60,7 +60,7 @@
 						</div><!-- end ft-title-txt-wrap -->
 					<div class="dark-overlay"></div>  
 
-							
+					<img src="<?php echo $coverImage; ?>" class="meta-image"/>
 						
 					</div> <!-- end ft-img --> 
 

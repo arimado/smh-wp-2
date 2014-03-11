@@ -10,7 +10,7 @@ Template: blankslate
 */ 
 
 @import url('../blankslate/style.css');
-
+@import url('');
 
 /*********  
 ----------------------------------------------------------------
@@ -26,6 +26,7 @@ a {
 	text-decoration: none;
 	color: black;
 }
+
 
 strong {
 	font-weight: bold;
@@ -84,10 +85,11 @@ LAYOUT
 
 
 	#sidebar {
-	width: 34.16666666667%;
-	float: right;
-	overflow: hidden;
+		width: 34.16666666667%;
+		float: right;
+		overflow: hidden;
 	}
+
 
 	#index-pagination {
 		display: none;
@@ -108,7 +110,7 @@ LAYOUT
 	text-align: center;
 	color: white;
 	position: relative;
-	z-index: 99999999;
+	z-index: 1200;
 	width: 500px;
 	margin: auto;
 	margin-top: 0px;
@@ -160,7 +162,7 @@ MENU
 
 #menu {
 	position: absolute;
-	z-index: 99999;
+	z-index: 1100;
 	color: white;
 	width: 100%;
 }
@@ -174,7 +176,7 @@ MENU
 	padding: 10px;
 	position: absolute;
 	right: 0;
-	z-index: 99999999;
+	z-index: 1200;
 }
 
 
@@ -265,17 +267,21 @@ HEADER
 		-moz-box-shadow:    inset 0px -3px 6px 0px rgba(50, 50, 50, 0.82);
 		box-shadow:         inset 0px -3px 6px 0px rgba(50, 50, 50, 0.82);
 		background-size: cover;
+		overflow: hidden;
+		position: relative;
 
 	}
 
 	.ft-img img{
-		width: 100%;
-		height: auto;
-		min-height: 450px;
-		display: block;
-		zoom: 1;
-		filter: alpha(opacity=50);
-		opacity: 0.8; 
+		
+	}
+
+	.meta-image {
+		width: auto !important;
+		position: absolute;
+		top: 0;
+		z-index: -10;
+		height: auto !important;
 	}
 
 	.ft-title-txt-wrap a {
@@ -418,8 +424,8 @@ SIDEBAR
  */
 
 .side-block {
-	margin-bottom: 20px;
 	overflow: auto;
+	margin: 0 0 20px 0;
 }
 
 /*
@@ -487,9 +493,13 @@ SIDEBAR
 */
 
 .latest-thing {
-
+	
 }
 
+	.latest-thing-main .side-block {
+		max-width: 425px;
+		margin: 0px auto 20px auto;
+	}
 	.latest-thing-main {
 		position: relative;
 		color: white;
@@ -504,7 +514,7 @@ SIDEBAR
 		height: 410px;
 		width: 100%; 
 		opacity: .7;
-		overflow: hidden;
+		overflow: hidden; 
 	}
 
 	.latest-thing-main-img img {
@@ -1049,6 +1059,41 @@ RELATED CONTENT // CATEGORY CONTENT // INDEX CONTENT
 		}
 
 
+/*********  
+----------------------------------------------------------------
+TAGS
+----------------------------------------------------------------
+ ******/
+
+ .tags {
+ 	border: 3px solid #EDEDED;
+ 	padding: 20px;
+ 	margin: 0 40px 20px 40px;
+ 	color: #ccc;
+ }
+
+ .tags-title {
+ 	display: block;
+ 	font-size: 1.1em; 
+ 	font-weight: 900;
+ }
+
+ .tags a {
+ 	background: #CCC;
+ 	padding: 10px;
+ 	text-transform: uppercase;
+ 	margin: 0 10px 10px 0;
+ 	font-weight: 700;
+ 	color: white;
+ 	display: inline-block;
+ 	font-size: .8em;
+
+ }
+
+  .tags a:hover {
+ 	background: #000;
+ }
+
 
 /*********  
 ----------------------------------------------------------------
@@ -1057,8 +1102,15 @@ COMMENTS, COMMENT
  ******/
 
 #comments {
-	display: none;
+	
 }
+
+.comments {
+	padding: 0 40px 0 40px;
+	margin: 0 0 20px 0;
+}
+
+
 
 /*********  
 ----------------------------------------------------------------
@@ -1208,9 +1260,37 @@ CATEGORY PAGE
 			font-size: .8em;
 		}
 
-/*
-	BIG FEATURE END
-*/
+
+/*********  
+----------------------------------------------------------------
+TAG PAGE
+----------------------------------------------------------------
+ ******/
+
+.tag-page-label {
+	display: block;
+	font-size: 2em;
+	margin: 0 0 20px 0;
+	opacity: .2;
+}
+
+.tag-page-title {
+	text-transform: uppercase;
+}
+
+	.tag-page-title-txt {
+		font-size: 2.5em;
+		font-weight: 600;
+	}
+
+.page-tags {
+	overflow: auto;
+	margin: 20px 0 20px 0 !important;
+
+}
+.page-tags a {
+	font-size: .8em !important;
+}
 
 /*********  
 ----------------------------------------------------------------
@@ -1226,7 +1306,8 @@ GLOBAL
 }
 
 .content-posts {
-	overflow: visible;
+	overflow: hidden;
+	
 }
 
 	.nav-button {
@@ -1541,7 +1622,7 @@ RESPONSIVE
 				}
 
 
-	#sidebar {
+	.sidebar {
 		display: none;
 	}
 
@@ -1560,15 +1641,19 @@ RESPONSIVE
 		float: none;
 	}
 
+	.sidebar-single {
+		padding: 0px 40px 0 40px;
+	}
+
+	#sidebar {
+		width: 100%;
+		float: none;
+	}
+
 
 	#primary {
-		padding: 0 0 0 20px;
+		padding: 0px;
 	}
-	#sidebar {
-		width: 100%; 
-		float: none;
-		padding: 0;
-	} 
 
 /* CATEGOR BEGINS */
 
@@ -1799,7 +1884,31 @@ RESPONSIVE
 			margin: 0px 0px 0px 0px;
 		}
 
+	/*
+
+	RELATED CONTENT COOL THING
+
+	*/
+
+	.related-content-cool {
+		padding: 0px 0px 0px 0px;
+		margin: 0 0 20px 0;
+		overflow: hidden;
+	}
+
+
+	/* SIDE BAR */
+
+	.sidebar-single {
+		padding: 0px 0px 0 0px !important; 
+	}
+
+
+
+
 }  /* END 600px */
+
+
 
 
  @media only screen and (max-width : 560px) {

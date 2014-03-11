@@ -38,7 +38,9 @@ $args = array(
         <li class="index-pagination-next"><?php next_posts_link( 'NEXT &raquo;', $the_query->max_num_pages) ?></li>
     </ul>
 </nav>
+<div class="sidebar">
+	<?php get_sidebar(); ?>
+</div>
 
-<?php get_sidebar(); ?>
 </section>
 <?php get_footer(); ?> 
