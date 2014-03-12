@@ -10,7 +10,10 @@ Template: blankslate
 */ 
 
 @import url('../blankslate/style.css');
-@import url('');
+@font-face {
+	font-family: 'Linotext Std';
+	src: url('fonts/linotxt.otf');
+}
 
 /*********  
 ----------------------------------------------------------------
@@ -1067,7 +1070,7 @@ TAGS
 
  .tags {
  	border: 3px solid #EDEDED;
- 	padding: 20px;
+ 	padding: 20px 20px 10px 20px;
  	margin: 0 40px 20px 40px;
  	color: #ccc;
  }
@@ -1108,6 +1111,10 @@ COMMENTS, COMMENT
 .comments {
 	padding: 0 40px 0 40px;
 	margin: 0 0 20px 0;
+}
+
+.disqus-comments {
+	padding: 0 23px 0 23px;
 }
 
 
@@ -1883,6 +1890,20 @@ RESPONSIVE
 		.related-post-wrapper:nth-child(2n+1) .related-b-post {
 			margin: 0px 0px 0px 0px;
 		}
+
+	/*
+	
+			TAGS
+	
+	*/
+
+	.tags {
+		margin: 0 0 20px 0;
+	}
+
+	.comments {
+		padding: 0 0 0 0;
+	}
 
 	/*
 

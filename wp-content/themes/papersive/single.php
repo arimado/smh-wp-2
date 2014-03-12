@@ -102,7 +102,9 @@
 				    <div class="side-title-txt">COMMENTS</div>
 				    <div class="side-title-line"></div>
 				</div>
-			<?php disqus_embed('smhustle'); ?>
+			<div class="disqus-comments">
+				<?php disqus_embed('smhustle'); ?>
+			</div>
 		</div>
 
 		<div class="<?php if (in_category('cool-thing'))  { echo 'related-content-cool'; } else { echo 'related-content'; }?>">  	 
